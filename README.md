@@ -1,8 +1,11 @@
 # Competency Graph
 
+**[Open the live graph →](https://jaewon45.github.io/competencies_ontology/)**
+
 An evidence-based knowledge graph of my skills: every skill links to the achievements that demonstrate it, and every achievement to the role or project it came from.
 
 The source data stays private. A build script validates it and publishes only labels and links.
+
 
 ## How it works
 
@@ -13,8 +16,8 @@ data/corrections.private.yaml private, git-ignored: claims the build refuses to 
         │
         │  python scripts/build_graph.py
         ▼
-site/graph.json               public: nodes and links only (fields listed in PUBLIC_FIELDS)
-site/index.html               public: D3 page that draws graph.json
+docs/graph.json               public: nodes and links only (fields listed in PUBLIC_FIELDS)
+docs/index.html               public: D3 page that draws graph.json
 ```
 
 The build stops if:
@@ -30,7 +33,7 @@ Achievements marked `needs-check` are left out unless you pass `--include-needs-
 pip install -r requirements.txt
 python scripts/build_graph.py            # real data (private file required)
 python scripts/build_graph.py --example  # example data, works for anyone
-python -m http.server -d site            # then open http://localhost:8000
+python -m http.server -d docs            # then open http://localhost:8000
 ```
 
 ## Layout
@@ -40,8 +43,8 @@ data/
   achievements.example.yaml   made-up entries showing the schema
   skills.yaml                 skill catalogue
 scripts/
-  build_graph.py              validate, apply publication policy, write site/graph.json
-site/
+  build_graph.py              validate, apply publication policy, write docs/graph.json
+docs/
   index.html                  the graph page
   graph.json                  generated
 ```
@@ -50,7 +53,6 @@ site/
 
 - Map skills to ESCO concepts (`esco:` field in skills.yaml).
 - `scripts/extract_skills.py`: an LLM with structured outputs proposes skills for achievements with an empty `skills` list, for review.
-- GitHub Pages deployment of `site/`.
 
 ## Rules
 
