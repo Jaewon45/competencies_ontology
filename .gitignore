@@ -1,0 +1,5 @@
+data/corrections.private.yaml
+*.private.*
+.env
+.DS_Store
+data/achievements.yaml
