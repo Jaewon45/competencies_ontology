@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jaewon Shin · Competency Graph</title>
+<meta name="description" content="An evidence-based knowledge graph of skills, linked to the roles and projects that demonstrate them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: header and stats, controls, graph canvas beside an inspector panel (stacks on phones). */
+:root {
+  --bg: #f5f7f8; --surface: #ffffff; --fg: #16232a; --muted: #5b6b73; --line: #d9e1e4;
+  --accent: #0b7f86; --accent-soft: #dff1f2; --edge: #c1ced2;
+  --a-data-engineering: #0b7f86; --a-statistics: #4a55c9; --a-classical-ml: #b5761a; --a-deep-learning: #b0406a;
+  --a-medical-data: #3c8a4d; --a-regulated: #7d55bf; --a-software: #3571ad;
+  --font-display: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root {
+  --bg: #0f171b; --surface: #16232a; --fg: #e4ecef; --muted: #93a6ae; --line: #284049;
+  --accent: #45c2c8; --accent-soft: #143a3e; --edge: #34505a;
+  --a-data-engineering: #45c2c8; --a-statistics: #8f98f2; --a-classical-ml: #e0aa55; --a-deep-learning: #e7809f;
+  --a-medical-data: #73c587; --a-regulated: #b593ee; --a-software: #74aee6;
+  color-scheme: dark; } }
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--fg); font: 15px/1.5 var(--font-body); }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 28px max(16px, env(safe-area-inset-right)) 48px max(16px, env(safe-area-inset-left)); display: grid; gap: 20px; }
+.eyebrow { font: 500 12px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+h1 { font: 700 clamp(26px, 4vw, 36px)/1.1 var(--font-display); margin: 4px 0 6px; text-wrap: balance; }
+.lede { color: var(--muted); max-width: 68ch; margin: 0; }
+.stats { display: flex; flex-wrap: wrap; gap: 10px; }
+.stat { display: flex; align-items: baseline; gap: 8px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+.stat b { font: 700 22px var(--font-display); font-variant-numeric: tabular-nums; }
+.stat span { color: var(--muted); font-size: 13px; }
+.controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font: 500 13px var(--font-body); display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); cursor: pointer; }
+.chip i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+.chip[aria-pressed="false"] { opacity: .45; }
+.search { font: 14px var(--font-body); padding: 6px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--fg); min-width: 0; width: 220px; max-width: 100%; }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.main { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 16px; align-items: start; }
+@media (max-width: 860px) { .main { grid-template-columns: minmax(0, 1fr); } }
+.canvas { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.canvas svg { display: block; width: 100%; height: 620px; touch-action: none; }
+@media (max-width: 860px) { .canvas svg { height: 470px; } }
+.hint { position: absolute; left: 12px; bottom: 10px; font: 11px var(--font-mono); color: var(--muted); pointer-events: none; }
+.legend { position: absolute; right: 12px; top: 10px; display: grid; gap: 4px; font-size: 12px; color: var(--muted); background: var(--surface); padding: 6px 8px; border-radius: 6px; border: 1px solid var(--line); }
+.legend svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; }
+.link { stroke: var(--edge); stroke-width: 1; }
+.link.part_of { stroke-dasharray: 3 3; }
+.node path { stroke: var(--surface); stroke-width: 1.5; cursor: pointer; }
+.node.area path { stroke-width: 3; }
+.node.achievement path { fill: var(--fg); }
+.node.role path, .node.project path { fill: var(--surface); stroke: var(--fg); stroke-width: 2; }
+.node.familiar path { fill-opacity: .3; stroke: var(--muted); stroke-dasharray: 2 2; }
+.node text { font: 10.5px var(--font-body); fill: var(--fg); pointer-events: none; paint-order: stroke; stroke: var(--surface); stroke-width: 3px; stroke-linejoin: round; }
+.node.area text { font: 700 13px var(--font-display); }
+.node.role text, .node.project text { font-weight: 600; font-size: 11.5px; }
+.node.achievement text { font-size: 10px; fill: var(--muted); }
+.dim .node { opacity: .13; } .dim .link { opacity: .05; }
+.dim .node.hl { opacity: 1; } .dim .link.hl { opacity: 1; stroke: var(--accent); stroke-width: 1.8; }
+.node.sel path { stroke: var(--accent); stroke-width: 3.5; }
+aside { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; display: grid; gap: 12px; min-width: 0; }
+aside h2 { font: 700 20px/1.2 var(--font-display); margin: 0; text-wrap: balance; }
+aside h3 { font: 500 11px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0; }
+aside p { margin: 0; }
+.kind { font: 500 11px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+.pill { display: inline-block; font: 600 11px var(--font-mono); text-transform: uppercase; padding: 2px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+.pill.familiar { background: var(--bg); color: var(--muted); border: 1px dashed var(--line); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font: 500 12.5px var(--font-body); padding: 2px 8px; border-radius: 6px; background: var(--bg); border: 1px solid var(--line); color: var(--fg); cursor: pointer; }
+.mono { font: 11px var(--font-mono); color: var(--muted); }
+footer { color: var(--muted); font-size: 13px; }
+.error { padding: 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Evidence-based competency graph</div>
+    <h1>Jaewon Shin: skills and the work that proves them</h1>
+    <p class="lede">Each skill links to the achievements that demonstrate it, and each achievement to the role or project it came from. Dashed skills are coursework-level familiarity. The graph is generated from a private, validated source file; only labels and links are published.</p>
+  </header>
+  <div class="stats" id="stats"></div>
+  <div class="controls">
+    <div class="chips" id="chips" aria-label="Competency areas"></div>
+    <input class="search" id="search" type="search" placeholder="Find a skill or role" aria-label="Find a skill or role" list="names">
+    <datalist id="names"></datalist>
+  </div>
+  <div class="main">
+    <div class="canvas">
+      <svg id="graph" aria-label="Competency graph"></svg>
+      <div class="legend" aria-hidden="true">
+        <div><svg viewBox="-8 -8 16 16"><circle r="6" fill="var(--muted)"/></svg>Skill</div>
+        <div><svg viewBox="-8 -8 16 16"><rect x="-4.5" y="-4.5" width="9" height="9" fill="var(--fg)"/></svg>Achievement</div>
+        <div><svg viewBox="-8 -8 16 16"><path d="M0,-7L7,0L0,7L-7,0Z" fill="none" stroke="var(--fg)" stroke-width="2"/></svg>Role or project</div>
+      </div>
+      <div class="hint">Drag to pan · scroll or pinch to zoom · click a node</div>
+    </div>
+    <aside id="panel" aria-live="polite"></aside>
+  </div>
+  <footer id="footer"></footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+(async function () {
+  let graph;
+  try {
+    const res = await fetch("graph.json", { cache: "no-store" });
+    if (!res.ok) throw new Error(res.status);
+    graph = await res.json();
+  } catch (e) {
+    document.querySelector(".main").innerHTML = '<div class="error">Could not load graph.json. Run <code>python scripts/build_graph.py</code>, then serve the folder with <code>python -m http.server -d site</code> and open <code>http://localhost:8000</code>. Opening the file directly does not work, because browsers block local file requests.</div>';
+    return;
+  }
+
+  const N = graph.nodes, L = graph.links;
+  const byId = new Map(N.map(n => [n.id, n]));
+  const areas = N.filter(n => n.type === "area");
+  const areaKey = id => id.replace(/^area:/, "");
+  const active = new Set(areas.map(a => areaKey(a.id)));
+  const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const linksOf = id => L.filter(l => l.source === id || l.target === id || l.source.id === id || l.target.id === id);
+  const other = (l, id) => { const s = l.source.id || l.source, t = l.target.id || l.target; return s === id ? t : s; };
+
+  // stats
+  const c = graph.meta.counts;
+  const proven = N.filter(n => n.type === "skill" && n.level === "proven").length;
+  document.getElementById("stats").innerHTML =
+    `<div class="stat"><b>${proven}</b><span>proven skills</span></div>` +
+    `<div class="stat"><b>${c.achievement}</b><span>achievements</span></div>` +
+    `<div class="stat"><b>${c.role + c.project}</b><span>roles &amp; projects</span></div>` +
+    `<div class="stat"><b>${c.area}</b><span>competency areas</span></div>`;
+  document.getElementById("footer").innerHTML = `Generated ${esc(graph.meta.generated_at.slice(0, 10))} from ${graph.meta.input === "example" ? "example data" : "a private source file"} · input <span class="mono">${esc(graph.meta.input_hash)}</span>`;
+
+  // chips
+  const chips = document.getElementById("chips");
+  areas.forEach(a => {
+    const k = areaKey(a.id), b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.dataset.area = k; b.setAttribute("aria-pressed", "true");
+    b.innerHTML = `<i style="background:var(--a-${k})"></i>${esc(a.label)}`;
+    b.onclick = () => { if (active.has(k)) { if (active.size > 1) active.delete(k); } else active.add(k);
+      chips.querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", active.has(x.dataset.area))); render(); };
+    chips.appendChild(b);
+  });
+
+  // search
+  const dl = document.getElementById("names");
+  N.filter(n => n.type === "skill" || n.type === "role" || n.type === "project").forEach(n => { const o = document.createElement("option"); o.value = n.label; dl.appendChild(o); });
+  document.getElementById("search").addEventListener("change", e => {
+    const q = e.target.value.trim().toLowerCase(); const hit = N.find(n => (n.label || "").toLowerCase() === q) || N.find(n => (n.label || "").toLowerCase().includes(q));
+    if (hit) { if (hit.type === "skill" && !active.has(hit.area)) { active.add(hit.area); chips.querySelector(`[data-area="${hit.area}"]`).setAttribute("aria-pressed", "true"); render(); } select(hit.id); }
+  });
+
+  // graph
+  const svg = d3.select("#graph"), root = svg.append("g"), linkG = root.append("g"), nodeG = root.append("g");
+  const zoom = d3.zoom().scaleExtent([0.3, 3]).on("zoom", e => root.attr("transform", e.transform));
+  svg.call(zoom).on("click", e => { if (e.target === svg.node()) select(null); });
+  let sim, selected = null;
+
+  function visible() {
+    const skills = N.filter(n => n.type === "skill" && active.has(n.area));
+    const sk = new Set(skills.map(s => s.id));
+    const ach = N.filter(n => n.type === "achievement" && L.some(l => (l.source.id || l.source) === n.id && sk.has(l.target.id || l.target)));
+    const ak = new Set(ach.map(a => a.id));
+    const ev = N.filter(n => (n.type === "role" || n.type === "project") && ach.some(a => a.evidence === n.id));
+    const ar = areas.filter(a => active.has(areaKey(a.id)));
+    const ids = new Set([...skills, ...ach, ...ev, ...ar].map(n => n.id));
+    const links = L.map(l => ({ source: l.source.id || l.source, target: l.target.id || l.target, type: l.type }))
+      .filter(l => ids.has(l.source) && ids.has(l.target));
+    return { nodes: [...ar, ...skills, ...ach, ...ev].map(n => ({ ...n })), links };
+  }
+
+  function shape(d) {
+    const s = d3.symbol();
+    if (d.type === "area") return s.type(d3.symbolCircle).size(520)();
+    if (d.type === "achievement") return s.type(d3.symbolSquare).size(90)();
+    if (d.type === "role" || d.type === "project") return s.type(d3.symbolDiamond).size(300)();
+    const deg = L.filter(l => (l.target.id || l.target) === d.id && l.type === "demonstrates").length;
+    return s.type(d3.symbolCircle).size(55 + deg * 30)();
+  }
+
+  function render() {
+    const { nodes, links } = visible();
+    const W = svg.node().clientWidth || 800, H = svg.node().clientHeight || 600;
+    svg.attr("viewBox", [0, 0, W, H]);
+    if (sim) sim.stop();
+    const link = linkG.selectAll("line").data(links, d => d.source + ">" + d.target).join("line").attr("class", d => "link " + d.type);
+    const node = nodeG.selectAll("g.node").data(nodes, d => d.id).join(e => { const g = e.append("g"); g.append("path"); g.append("text"); return g; });
+    node.attr("class", d => `node ${d.type}${d.level === "familiar" ? " familiar" : ""}`);
+    node.select("path").attr("d", shape).style("fill", d => d.type === "skill" ? `var(--a-${d.area})` : d.type === "area" ? `var(--a-${areaKey(d.id)})` : null);
+    node.select("text").text(d => d.label)
+      .attr("x", d => d.type === "area" ? 0 : 9).attr("y", d => d.type === "area" ? -17 : 3.5)
+      .attr("text-anchor", d => d.type === "area" ? "middle" : "start");
+    node.on("click", (e, d) => { e.stopPropagation(); select(d.id); });
+    node.call(d3.drag()
+      .on("start", (e, d) => { if (!e.active) sim.alphaTarget(.25).restart(); d.fx = d.x; d.fy = d.y; })
+      .on("drag", (e, d) => { d.fx = e.x; d.fy = e.y; })
+      .on("end", (e, d) => { if (!e.active) sim.alphaTarget(0); d.fx = d.fy = null; }));
+    const R = Math.min(W, H) * .3;
+    nodes.forEach((d, i) => {
+      if (d.type === "area") { const k = areas.findIndex(a => a.id === d.id), t = k / areas.length * 2 * Math.PI; d.x = W / 2 + Math.cos(t) * R; d.y = H / 2 + Math.sin(t) * R; }
+      else { d.x = W / 2 + (Math.random() - .5) * 100; d.y = H / 2 + (Math.random() - .5) * 100; }
+    });
+    sim = d3.forceSimulation(nodes)
+      .force("link", d3.forceLink(links).id(d => d.id)
+        .distance(l => l.type === "in_area" ? 45 : l.type === "part_of" ? 60 : 95)
+        .strength(l => l.type === "in_area" ? .9 : l.type === "part_of" ? .5 : .08))
+      .force("charge", d3.forceManyBody().strength(d => d.type === "area" ? -500 : d.type === "skill" ? -90 : -150))
+      .force("collide", d3.forceCollide(d => d.type === "area" ? 30 : 13))
+      .force("x", d3.forceX(W / 2).strength(.04)).force("y", d3.forceY(H / 2).strength(.04))
+      .on("tick", () => {
+        link.attr("x1", d => d.source.x).attr("y1", d => d.source.y).attr("x2", d => d.target.x).attr("y2", d => d.target.y);
+        node.attr("transform", d => `translate(${d.x},${d.y})`);
+      });
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) { sim.stop(); for (let i = 0; i < 300; i++) sim.tick(); sim.on("tick")(); }
+    const k = W < 600 ? .6 : .9;
+    svg.call(zoom.transform, d3.zoomIdentity.translate(W / 2 * (1 - k), H / 2 * (1 - k)).scale(k));
+    highlight();
+  }
+
+  function highlight() {
+    root.classed("dim", !!selected);
+    const nb = new Set(selected ? [selected] : []);
+    if (selected) linkG.selectAll("line").each(l => { if (l.source.id === selected) nb.add(l.target.id); if (l.target.id === selected) nb.add(l.source.id); });
+    nodeG.selectAll("g.node").classed("hl", d => nb.has(d.id)).classed("sel", d => d.id === selected);
+    linkG.selectAll("line").classed("hl", l => l.source.id === selected || l.target.id === selected);
+  }
+
+  const panel = document.getElementById("panel");
+  const tag = id => `<button type="button" class="tag" data-go="${esc(id)}">${esc(byId.get(id).label)}</button>`;
+  function select(id) {
+    selected = id && byId.has(id) ? id : null;
+    highlight();
+    panel.innerHTML = selected ? detail(byId.get(selected)) : overview();
+    panel.querySelectorAll("[data-go]").forEach(b => b.onclick = () => {
+      const n = byId.get(b.dataset.go);
+      if (n.type === "skill" && !active.has(n.area)) { active.add(n.area); chips.querySelector(`[data-area="${n.area}"]`).setAttribute("aria-pressed", "true"); render(); }
+      select(n.id);
+    });
+  }
+  function overview() {
+    const skills = N.filter(n => n.type === "skill" && n.level === "proven")
+      .map(s => [s, linksOf(s.id).filter(l => l.type === "demonstrates").length]).sort((a, b) => b[1] - a[1]).slice(0, 8);
+    const ev = N.filter(n => n.type === "role" || n.type === "project");
+    return `<div class="kind">Overview</div><h2>How to read this graph</h2>
+      <p>Colored circles are skills, grouped by area; bigger means more achievements demonstrate it. Squares are achievements and diamonds are roles or projects. Click anything to follow the evidence.</p>
+      <h3>Most-evidenced skills</h3><div class="tags">${skills.map(([s]) => tag(s.id)).join("")}</div>
+      <h3>Roles and projects</h3><div class="tags">${ev.map(e => tag(e.id)).join("")}</div>`;
+  }
+  function detail(n) {
+    const nbrs = t => linksOf(n.id).map(l => byId.get(other(l, n.id))).filter(x => x && x.type === t);
+    if (n.type === "area") {
+      const sk = N.filter(s => s.type === "skill" && s.area === areaKey(n.id));
+      return `<div class="kind">Competency area</div><h2>${esc(n.label)}</h2><h3>${sk.length} skills</h3><div class="tags">${sk.map(s => tag(s.id)).join("")}</div>`;
+    }
+    if (n.type === "skill") {
+      const ach = nbrs("achievement");
+      return `<div class="kind">Skill · ${esc(byId.get("area:" + n.area).label)}</div><h2>${esc(n.label)}</h2>
+        <div><span class="pill ${n.level}">${n.level === "proven" ? "Hands-on" : "Familiar"}</span></div>
+        <h3>Demonstrated in</h3>${ach.length ? `<div class="tags">${ach.map(a => tag(a.id)).join("")}</div>` : "<p>Coursework-level familiarity; no achievement linked.</p>"}
+        ${n.esco ? `<p class="mono">ESCO: ${esc(n.esco)}</p>` : ""}`;
+    }
+    if (n.type === "achievement") {
+      const ev = byId.get(n.evidence);
+      return `<div class="kind">Achievement · ${esc(n.period || "")}</div><h2>${esc(n.label)}</h2>
+        <h3>From</h3><div class="tags">${tag(ev.id)}</div>
+        <h3>Skills demonstrated</h3><div class="tags">${nbrs("skill").map(s => tag(s.id)).join("")}</div>
+        <p class="mono">record ${esc(n.source_hash)}</p>`;
+    }
+    const ach = nbrs("achievement");
+    const sk = [...new Set(ach.flatMap(a => linksOf(a.id).map(l => other(l, a.id)).filter(x => byId.get(x)?.type === "skill")))];
+    return `<div class="kind">${n.type === "role" ? "Role" : "Project"} · ${esc(n.period || "")}</div><h2>${esc(n.label)}</h2>
+      <p>${esc(n.title || n.kind || "")}</p>
+      <h3>${ach.length} achievements</h3><div class="tags">${ach.map(a => tag(a.id)).join("")}</div>
+      <h3>${sk.length} skills shown here</h3><div class="tags">${sk.map(s => tag(s)).join("")}</div>`;
+  }
+
+  render(); select(null);
+  let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(render, 200); });
+})();
+</script>
+</body>
+</html>

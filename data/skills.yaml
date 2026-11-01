@@ -1,0 +1,84 @@
+# Public skill catalogue. Every skill id used in achievements.yaml must be listed here.
+# level: proven   = used in a role or project (evidence comes from achievements)
+#        familiar = coursework or light use; listed without achievement links
+# esco:  ESCO concept URI, filled in during the taxonomy step (null until mapped)
+
+areas:
+  - {id: data-engineering, label: Data engineering}
+  - {id: statistics, label: Statistics}
+  - {id: classical-ml, label: Classical ML}
+  - {id: deep-learning, label: Deep learning and LLMs}
+  - {id: medical-data, label: Medical data}
+  - {id: regulated, label: Regulated domain}
+  - {id: software, label: Software and tools}
+
+skills:
+  # Data engineering
+  - {id: python, label: Python, area: data-engineering, level: proven, esco: null}
+  - {id: sql-relational, label: SQL and relational data, area: data-engineering, level: proven, esco: null}
+  - {id: data-pipelines, label: Data pipelines, area: data-engineering, level: proven, esco: null}
+  - {id: data-validation, label: Data validation and QC, area: data-engineering, level: proven, esco: null}
+  - {id: data-lineage, label: Data lineage, area: data-engineering, level: proven, esco: null}
+  - {id: reproducibility, label: Reproducibility, area: data-engineering, level: proven, esco: null}
+  - {id: structured-logging, label: Structured logging, area: data-engineering, level: proven, esco: null}
+  - {id: data-integration, label: Data integration, area: data-engineering, level: proven, esco: null}
+  - {id: performance-optimization, label: Performance optimization, area: data-engineering, level: proven, esco: null}
+  - {id: workflow-automation, label: Workflow automation, area: data-engineering, level: proven, esco: null}
+  # Statistics
+  - {id: mixed-effects-models, label: Mixed-effects models, area: statistics, level: proven, esco: null}
+  - {id: bootstrapping, label: Bootstrapping, area: statistics, level: proven, esco: null}
+  - {id: mathematical-optimization, label: Mathematical optimization, area: statistics, level: proven, esco: null}
+  - {id: diagnostic-metrics, label: Diagnostic performance metrics, area: statistics, level: proven, esco: null}
+  - {id: calibration, label: Calibration, area: statistics, level: proven, esco: null}
+  - {id: cross-validation, label: Cross-validation, area: statistics, level: proven, esco: null}
+  - {id: time-series-forecasting, label: Time-series forecasting, area: statistics, level: proven, esco: null}
+  - {id: hierarchical-forecasting, label: Hierarchical forecasting, area: statistics, level: proven, esco: null}
+  - {id: tail-risk, label: Tail risk (CVaR), area: statistics, level: proven, esco: null}
+  - {id: benchmarking, label: Benchmarking, area: statistics, level: proven, esco: null}
+  # Classical ML
+  - {id: classical-ml, label: Classical ML, area: classical-ml, level: proven, esco: null}
+  - {id: gradient-boosting, label: Gradient boosting, area: classical-ml, level: proven, esco: null}
+  - {id: logistic-regression, label: Logistic regression, area: classical-ml, level: proven, esco: null}
+  - {id: class-imbalance, label: Class imbalance handling, area: classical-ml, level: proven, esco: null}
+  - {id: feature-importance, label: Feature importance, area: classical-ml, level: proven, esco: null}
+  - {id: threshold-tuning, label: Threshold tuning, area: classical-ml, level: proven, esco: null}
+  - {id: hyperparameter-tuning, label: Hyperparameter tuning, area: classical-ml, level: proven, esco: null}
+  - {id: clustering, label: Clustering, area: classical-ml, level: proven, esco: null}
+  - {id: anomaly-detection, label: Anomaly detection, area: classical-ml, level: proven, esco: null}
+  - {id: recommendation-systems, label: Recommendation systems, area: classical-ml, level: proven, esco: null}
+  # Deep learning and LLMs
+  - {id: pytorch, label: PyTorch, area: deep-learning, level: proven, esco: null}
+  - {id: vision-language-models, label: Vision-language models, area: deep-learning, level: proven, esco: null}
+  - {id: lora, label: LoRA fine-tuning, area: deep-learning, level: proven, esco: null}
+  - {id: zero-few-shot-benchmarking, label: Zero/few-shot benchmarking, area: deep-learning, level: proven, esco: null}
+  - {id: structured-llm-outputs, label: Structured LLM outputs, area: deep-learning, level: proven, esco: null}
+  - {id: openai-api, label: OpenAI API, area: deep-learning, level: proven, esco: null}
+  - {id: llm-agents, label: LLM agents, area: deep-learning, level: proven, esco: null}
+  - {id: llm-failure-analysis, label: LLM failure analysis, area: deep-learning, level: proven, esco: null}
+  - {id: gpu-optimization, label: GPU optimization, area: deep-learning, level: proven, esco: null}
+  - {id: domain-generalization, label: Domain generalization, area: deep-learning, level: proven, esco: null}
+  - {id: privacy-preserving-ml, label: Privacy-preserving ML, area: deep-learning, level: proven, esco: null}
+  - {id: rag, label: Retrieval-augmented generation, area: deep-learning, level: familiar, esco: null}
+  - {id: rlhf, label: RLHF, area: deep-learning, level: familiar, esco: null}
+  # Medical data
+  - {id: dicom, label: DICOM, area: medical-data, level: proven, esco: null}
+  - {id: multi-sequence-mri, label: Multi-sequence MRI, area: medical-data, level: proven, esco: null}
+  - {id: ecg, label: ECG, area: medical-data, level: proven, esco: null}
+  - {id: hemodynamics, label: Hemodynamics, area: medical-data, level: proven, esco: null}
+  - {id: ehr, label: Electronic health records, area: medical-data, level: proven, esco: null}
+  # Regulated domain
+  - {id: iso-evidence, label: ISO-aligned evidence, area: regulated, level: proven, esco: null}
+  - {id: regulated-pharma, label: Regulated pharma, area: regulated, level: proven, esco: null}
+  - {id: clinician-collaboration, label: Clinician collaboration, area: regulated, level: proven, esco: null}
+  # Software and tools
+  - {id: unit-testing, label: Unit testing, area: software, level: proven, esco: null}
+  - {id: ci-azure-devops, label: CI (Azure DevOps), area: software, level: proven, esco: null}
+  - {id: code-review, label: Code review, area: software, level: proven, esco: null}
+  - {id: docker, label: Docker, area: software, level: proven, esco: null}
+  - {id: rest-apis, label: REST APIs, area: software, level: proven, esco: null}
+  - {id: java, label: Java, area: software, level: proven, esco: null}
+  - {id: graph-algorithms, label: Graph algorithms, area: software, level: proven, esco: null}
+  - {id: power-automate, label: Power Automate, area: software, level: proven, esco: null}
+  - {id: google-analytics, label: Google Analytics, area: software, level: proven, esco: null}
+  - {id: stakeholder-reporting, label: Stakeholder reporting, area: software, level: proven, esco: null}
+  - {id: power-bi, label: Power BI, area: software, level: familiar, esco: null}

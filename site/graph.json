@@ -1,0 +1,1658 @@
+{
+  "meta": {
+    "generated_at": "2026-11-01T21:20:08+00:00",
+    "input": "private",
+    "input_hash": "df0d8b17f76c",
+    "skills_hash": "ca39c60943dd",
+    "counts": {
+      "area": 7,
+      "skill": 62,
+      "role": 5,
+      "project": 5,
+      "achievement": 24
+    },
+    "excluded_achievements": 1
+  },
+  "nodes": [
+    {
+      "id": "area:data-engineering",
+      "type": "area",
+      "label": "Data engineering"
+    },
+    {
+      "id": "area:statistics",
+      "type": "area",
+      "label": "Statistics"
+    },
+    {
+      "id": "area:classical-ml",
+      "type": "area",
+      "label": "Classical ML"
+    },
+    {
+      "id": "area:deep-learning",
+      "type": "area",
+      "label": "Deep learning and LLMs"
+    },
+    {
+      "id": "area:medical-data",
+      "type": "area",
+      "label": "Medical data"
+    },
+    {
+      "id": "area:regulated",
+      "type": "area",
+      "label": "Regulated domain"
+    },
+    {
+      "id": "area:software",
+      "type": "area",
+      "label": "Software and tools"
+    },
+    {
+      "id": "python",
+      "type": "skill",
+      "label": "Python",
+      "area": "data-engineering",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "sql-relational",
+      "type": "skill",
+      "label": "SQL and relational data",
+      "area": "data-engineering",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "data-pipelines",
+      "type": "skill",
+      "label": "Data pipelines",
+      "area": "data-engineering",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "data-validation",
+      "type": "skill",
+      "label": "Data validation and QC",
+      "area": "data-engineering",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "data-lineage",
+      "type": "skill",
+      "label": "Data lineage",
+      "area": "data-engineering",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "reproducibility",
+      "type": "skill",
+      "label": "Reproducibility",
+      "area": "data-engineering",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "structured-logging",
+      "type": "skill",
+      "label": "Structured logging",
+      "area": "data-engineering",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "data-integration",
+      "type": "skill",
+      "label": "Data integration",
+      "area": "data-engineering",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "performance-optimization",
+      "type": "skill",
+      "label": "Performance optimization",
+      "area": "data-engineering",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "workflow-automation",
+      "type": "skill",
+      "label": "Workflow automation",
+      "area": "data-engineering",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "mixed-effects-models",
+      "type": "skill",
+      "label": "Mixed-effects models",
+      "area": "statistics",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "bootstrapping",
+      "type": "skill",
+      "label": "Bootstrapping",
+      "area": "statistics",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "mathematical-optimization",
+      "type": "skill",
+      "label": "Mathematical optimization",
+      "area": "statistics",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "diagnostic-metrics",
+      "type": "skill",
+      "label": "Diagnostic performance metrics",
+      "area": "statistics",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "calibration",
+      "type": "skill",
+      "label": "Calibration",
+      "area": "statistics",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "cross-validation",
+      "type": "skill",
+      "label": "Cross-validation",
+      "area": "statistics",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "time-series-forecasting",
+      "type": "skill",
+      "label": "Time-series forecasting",
+      "area": "statistics",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "hierarchical-forecasting",
+      "type": "skill",
+      "label": "Hierarchical forecasting",
+      "area": "statistics",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "tail-risk",
+      "type": "skill",
+      "label": "Tail risk (CVaR)",
+      "area": "statistics",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "benchmarking",
+      "type": "skill",
+      "label": "Benchmarking",
+      "area": "statistics",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "classical-ml",
+      "type": "skill",
+      "label": "Classical ML",
+      "area": "classical-ml",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "gradient-boosting",
+      "type": "skill",
+      "label": "Gradient boosting",
+      "area": "classical-ml",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "logistic-regression",
+      "type": "skill",
+      "label": "Logistic regression",
+      "area": "classical-ml",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "class-imbalance",
+      "type": "skill",
+      "label": "Class imbalance handling",
+      "area": "classical-ml",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "feature-importance",
+      "type": "skill",
+      "label": "Feature importance",
+      "area": "classical-ml",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "threshold-tuning",
+      "type": "skill",
+      "label": "Threshold tuning",
+      "area": "classical-ml",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "hyperparameter-tuning",
+      "type": "skill",
+      "label": "Hyperparameter tuning",
+      "area": "classical-ml",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "clustering",
+      "type": "skill",
+      "label": "Clustering",
+      "area": "classical-ml",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "anomaly-detection",
+      "type": "skill",
+      "label": "Anomaly detection",
+      "area": "classical-ml",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "recommendation-systems",
+      "type": "skill",
+      "label": "Recommendation systems",
+      "area": "classical-ml",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "pytorch",
+      "type": "skill",
+      "label": "PyTorch",
+      "area": "deep-learning",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "vision-language-models",
+      "type": "skill",
+      "label": "Vision-language models",
+      "area": "deep-learning",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "lora",
+      "type": "skill",
+      "label": "LoRA fine-tuning",
+      "area": "deep-learning",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "zero-few-shot-benchmarking",
+      "type": "skill",
+      "label": "Zero/few-shot benchmarking",
+      "area": "deep-learning",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "structured-llm-outputs",
+      "type": "skill",
+      "label": "Structured LLM outputs",
+      "area": "deep-learning",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "openai-api",
+      "type": "skill",
+      "label": "OpenAI API",
+      "area": "deep-learning",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "llm-agents",
+      "type": "skill",
+      "label": "LLM agents",
+      "area": "deep-learning",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "llm-failure-analysis",
+      "type": "skill",
+      "label": "LLM failure analysis",
+      "area": "deep-learning",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "gpu-optimization",
+      "type": "skill",
+      "label": "GPU optimization",
+      "area": "deep-learning",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "domain-generalization",
+      "type": "skill",
+      "label": "Domain generalization",
+      "area": "deep-learning",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "privacy-preserving-ml",
+      "type": "skill",
+      "label": "Privacy-preserving ML",
+      "area": "deep-learning",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "rag",
+      "type": "skill",
+      "label": "Retrieval-augmented generation",
+      "area": "deep-learning",
+      "level": "familiar",
+      "esco": null
+    },
+    {
+      "id": "rlhf",
+      "type": "skill",
+      "label": "RLHF",
+      "area": "deep-learning",
+      "level": "familiar",
+      "esco": null
+    },
+    {
+      "id": "dicom",
+      "type": "skill",
+      "label": "DICOM",
+      "area": "medical-data",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "multi-sequence-mri",
+      "type": "skill",
+      "label": "Multi-sequence MRI",
+      "area": "medical-data",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "ecg",
+      "type": "skill",
+      "label": "ECG",
+      "area": "medical-data",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "hemodynamics",
+      "type": "skill",
+      "label": "Hemodynamics",
+      "area": "medical-data",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "ehr",
+      "type": "skill",
+      "label": "Electronic health records",
+      "area": "medical-data",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "iso-evidence",
+      "type": "skill",
+      "label": "ISO-aligned evidence",
+      "area": "regulated",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "regulated-pharma",
+      "type": "skill",
+      "label": "Regulated pharma",
+      "area": "regulated",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "clinician-collaboration",
+      "type": "skill",
+      "label": "Clinician collaboration",
+      "area": "regulated",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "unit-testing",
+      "type": "skill",
+      "label": "Unit testing",
+      "area": "software",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "ci-azure-devops",
+      "type": "skill",
+      "label": "CI (Azure DevOps)",
+      "area": "software",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "code-review",
+      "type": "skill",
+      "label": "Code review",
+      "area": "software",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "docker",
+      "type": "skill",
+      "label": "Docker",
+      "area": "software",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "rest-apis",
+      "type": "skill",
+      "label": "REST APIs",
+      "area": "software",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "java",
+      "type": "skill",
+      "label": "Java",
+      "area": "software",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "graph-algorithms",
+      "type": "skill",
+      "label": "Graph algorithms",
+      "area": "software",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "power-automate",
+      "type": "skill",
+      "label": "Power Automate",
+      "area": "software",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "google-analytics",
+      "type": "skill",
+      "label": "Google Analytics",
+      "area": "software",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "stakeholder-reporting",
+      "type": "skill",
+      "label": "Stakeholder reporting",
+      "area": "software",
+      "level": "proven",
+      "esco": null
+    },
+    {
+      "id": "power-bi",
+      "type": "skill",
+      "label": "Power BI",
+      "area": "software",
+      "level": "familiar",
+      "esco": null
+    },
+    {
+      "id": "basf",
+      "type": "role",
+      "label": "BASF",
+      "org": "BASF",
+      "title": "Data Science Intern (Consulting Project), Applied ML",
+      "period": "2024-10/2025-04"
+    },
+    {
+      "id": "ewha-brain",
+      "type": "role",
+      "label": "Ewha Brain Institute",
+      "org": "Ewha Brain Institute",
+      "title": "Neuroscience Research Intern",
+      "period": "2020-11/2021-02"
+    },
+    {
+      "id": "homomorphic-ml",
+      "type": "project",
+      "label": "Privacy-Preserving ML with Homomorphic Encryption",
+      "kind": "coursework project (Data Security & Data Ethics, LMU)",
+      "period": "2024-12/2025-02"
+    },
+    {
+      "id": "klinikum",
+      "type": "role",
+      "label": "Klinikum rechts der Isar (TUM), Neuromonitoring Group",
+      "org": "Klinikum rechts der Isar (TUM), Neuromonitoring Group",
+      "title": "Machine Learning Intern, ICU Delirium Prediction",
+      "period": "2024-03/2024-04"
+    },
+    {
+      "id": "loan-risk",
+      "type": "project",
+      "label": "Loan Application Risk & CRM Strategy",
+      "kind": "independent project",
+      "period": "2022-08/2022-09"
+    },
+    {
+      "id": "philips-ws",
+      "type": "role",
+      "label": "Philips Medizin Systeme Böblingen GmbH",
+      "org": "Philips Medizin Systeme Böblingen GmbH",
+      "title": "Working Student, Clinical Data Analysis (incl. Master's Thesis)",
+      "period": "2024-05/present"
+    },
+    {
+      "id": "recsys",
+      "type": "project",
+      "label": "End-to-End Retrieval and Recommendation Service",
+      "kind": "coursework team project (Human Computation & Visual Analytics, LMU)",
+      "period": "2024-04/2024-07"
+    },
+    {
+      "id": "routing-server",
+      "type": "project",
+      "label": "Pathfinding and Routing Server",
+      "kind": "coursework project (System Development, LMU)",
+      "period": "2023-12/2024-02"
+    },
+    {
+      "id": "sanofi",
+      "type": "role",
+      "label": "Sanofi-Aventis Korea",
+      "org": "Sanofi-Aventis Korea",
+      "title": "Rare Diseases Marketing Trainee, KPI & Digital Analytics",
+      "period": "2023-02/2023-08"
+    },
+    {
+      "id": "tail-risk",
+      "type": "project",
+      "label": "ML Tail Risk & Domain Generalization",
+      "kind": "research paper (first author, submitted)",
+      "period": "2026-06/2026-10"
+    },
+    {
+      "id": "ph-pipeline",
+      "type": "achievement",
+      "label": "Tested physiological data pipeline",
+      "evidence": "philips-ws",
+      "period": "2024-05/present",
+      "source_hash": "9cea05a8f652"
+    },
+    {
+      "id": "ph-lineage",
+      "type": "achievement",
+      "label": "Run traceability and lineage checks",
+      "evidence": "philips-ws",
+      "period": "2024-05/present",
+      "source_hash": "ba713c9db950"
+    },
+    {
+      "id": "ph-llm-agent",
+      "type": "achievement",
+      "label": "LLM documentation agent",
+      "evidence": "philips-ws",
+      "period": "2024-05/present",
+      "source_hash": "70ed301e62d2"
+    },
+    {
+      "id": "ph-iso-validation",
+      "type": "achievement",
+      "label": "ISO validation of BP and cardiac output",
+      "evidence": "philips-ws",
+      "period": "2024-05/present",
+      "source_hash": "51a1e68eeca7"
+    },
+    {
+      "id": "ph-competitor-benchmarks",
+      "type": "achievement",
+      "label": "Competitor benchmarks and ISO workflows",
+      "evidence": "philips-ws",
+      "period": "2024-05/present",
+      "source_hash": "adc0543e38a2"
+    },
+    {
+      "id": "ph-batch-cli",
+      "type": "achievement",
+      "label": "Batch reporting CLI",
+      "evidence": "philips-ws",
+      "period": "2024-05/present",
+      "source_hash": "810c3dbe87a2"
+    },
+    {
+      "id": "th-finetune",
+      "type": "achievement",
+      "label": "ECG foundation model fine-tuning",
+      "evidence": "philips-ws",
+      "period": "2024-05/present",
+      "source_hash": "211ecc51b152"
+    },
+    {
+      "id": "th-benchmark",
+      "type": "achievement",
+      "label": "Foundation model and LLM benchmarking",
+      "evidence": "philips-ws",
+      "period": "2024-05/present",
+      "source_hash": "2320fa49d15d"
+    },
+    {
+      "id": "th-evaluation",
+      "type": "achievement",
+      "label": "Clinical evaluation and failure analysis",
+      "evidence": "philips-ws",
+      "period": "2024-05/present",
+      "source_hash": "db8b0dab1e8b"
+    },
+    {
+      "id": "th-gpu-efficiency",
+      "type": "achievement",
+      "label": "GPU efficiency optimization",
+      "evidence": "philips-ws",
+      "period": "2024-05/present",
+      "source_hash": "153deb7c1810"
+    },
+    {
+      "id": "ba-forecasting",
+      "type": "achievement",
+      "label": "Hierarchical forecasting",
+      "evidence": "basf",
+      "period": "2024-10/2025-04",
+      "source_hash": "07aba30d5f28"
+    },
+    {
+      "id": "ba-reporting",
+      "type": "achievement",
+      "label": "Forecast reporting for planners",
+      "evidence": "basf",
+      "period": "2024-10/2025-04",
+      "source_hash": "adb78393094d"
+    },
+    {
+      "id": "kr-data",
+      "type": "achievement",
+      "label": "eICU data harmonization",
+      "evidence": "klinikum",
+      "period": "2024-03/2024-04",
+      "source_hash": "1cff31993020"
+    },
+    {
+      "id": "kr-models",
+      "type": "achievement",
+      "label": "Delirium prediction models",
+      "evidence": "klinikum",
+      "period": "2024-03/2024-04",
+      "source_hash": "c0099414be0e"
+    },
+    {
+      "id": "kr-threshold",
+      "type": "achievement",
+      "label": "Sensitivity-first threshold tuning",
+      "evidence": "klinikum",
+      "period": "2024-03/2024-04",
+      "source_hash": "8ac3b9228b31"
+    },
+    {
+      "id": "sa-kpi",
+      "type": "achievement",
+      "label": "Rare-disease KPI tracker",
+      "evidence": "sanofi",
+      "period": "2023-02/2023-08",
+      "source_hash": "77981f048901"
+    },
+    {
+      "id": "sa-digital",
+      "type": "achievement",
+      "label": "Digital outreach analytics",
+      "evidence": "sanofi",
+      "period": "2023-02/2023-08",
+      "source_hash": "c1a6a1798fec"
+    },
+    {
+      "id": "ew-mri-curation",
+      "type": "achievement",
+      "label": "Multi-sequence MRI curation",
+      "evidence": "ewha-brain",
+      "period": "2020-11/2021-02",
+      "source_hash": "66469962a247"
+    },
+    {
+      "id": "ew-review",
+      "type": "achievement",
+      "label": "Neuroimaging modality review",
+      "evidence": "ewha-brain",
+      "period": "2020-11/2021-02",
+      "source_hash": "e02131e8a0f8"
+    },
+    {
+      "id": "pr-tail-risk",
+      "type": "achievement",
+      "label": "Tail-risk evaluation framework",
+      "evidence": "tail-risk",
+      "period": "2026-06/2026-10",
+      "source_hash": "f0ac00fa247c"
+    },
+    {
+      "id": "pr-homomorphic",
+      "type": "achievement",
+      "label": "Encrypted ML computation",
+      "evidence": "homomorphic-ml",
+      "period": "2024-12/2025-02",
+      "source_hash": "08375084ef47"
+    },
+    {
+      "id": "pr-recsys",
+      "type": "achievement",
+      "label": "Hybrid recommendation platform",
+      "evidence": "recsys",
+      "period": "2024-04/2024-07",
+      "source_hash": "b1e069033ae1"
+    },
+    {
+      "id": "pr-routing",
+      "type": "achievement",
+      "label": "Java routing service",
+      "evidence": "routing-server",
+      "period": "2023-12/2024-02",
+      "source_hash": "87a5fda3a9b6"
+    },
+    {
+      "id": "pr-loan",
+      "type": "achievement",
+      "label": "Risk models and segmentation",
+      "evidence": "loan-risk",
+      "period": "2022-08/2022-09",
+      "source_hash": "eb03eb460e4d"
+    }
+  ],
+  "links": [
+    {
+      "source": "python",
+      "target": "area:data-engineering",
+      "type": "in_area"
+    },
+    {
+      "source": "sql-relational",
+      "target": "area:data-engineering",
+      "type": "in_area"
+    },
+    {
+      "source": "data-pipelines",
+      "target": "area:data-engineering",
+      "type": "in_area"
+    },
+    {
+      "source": "data-validation",
+      "target": "area:data-engineering",
+      "type": "in_area"
+    },
+    {
+      "source": "data-lineage",
+      "target": "area:data-engineering",
+      "type": "in_area"
+    },
+    {
+      "source": "reproducibility",
+      "target": "area:data-engineering",
+      "type": "in_area"
+    },
+    {
+      "source": "structured-logging",
+      "target": "area:data-engineering",
+      "type": "in_area"
+    },
+    {
+      "source": "data-integration",
+      "target": "area:data-engineering",
+      "type": "in_area"
+    },
+    {
+      "source": "performance-optimization",
+      "target": "area:data-engineering",
+      "type": "in_area"
+    },
+    {
+      "source": "workflow-automation",
+      "target": "area:data-engineering",
+      "type": "in_area"
+    },
+    {
+      "source": "mixed-effects-models",
+      "target": "area:statistics",
+      "type": "in_area"
+    },
+    {
+      "source": "bootstrapping",
+      "target": "area:statistics",
+      "type": "in_area"
+    },
+    {
+      "source": "mathematical-optimization",
+      "target": "area:statistics",
+      "type": "in_area"
+    },
+    {
+      "source": "diagnostic-metrics",
+      "target": "area:statistics",
+      "type": "in_area"
+    },
+    {
+      "source": "calibration",
+      "target": "area:statistics",
+      "type": "in_area"
+    },
+    {
+      "source": "cross-validation",
+      "target": "area:statistics",
+      "type": "in_area"
+    },
+    {
+      "source": "time-series-forecasting",
+      "target": "area:statistics",
+      "type": "in_area"
+    },
+    {
+      "source": "hierarchical-forecasting",
+      "target": "area:statistics",
+      "type": "in_area"
+    },
+    {
+      "source": "tail-risk",
+      "target": "area:statistics",
+      "type": "in_area"
+    },
+    {
+      "source": "benchmarking",
+      "target": "area:statistics",
+      "type": "in_area"
+    },
+    {
+      "source": "classical-ml",
+      "target": "area:classical-ml",
+      "type": "in_area"
+    },
+    {
+      "source": "gradient-boosting",
+      "target": "area:classical-ml",
+      "type": "in_area"
+    },
+    {
+      "source": "logistic-regression",
+      "target": "area:classical-ml",
+      "type": "in_area"
+    },
+    {
+      "source": "class-imbalance",
+      "target": "area:classical-ml",
+      "type": "in_area"
+    },
+    {
+      "source": "feature-importance",
+      "target": "area:classical-ml",
+      "type": "in_area"
+    },
+    {
+      "source": "threshold-tuning",
+      "target": "area:classical-ml",
+      "type": "in_area"
+    },
+    {
+      "source": "hyperparameter-tuning",
+      "target": "area:classical-ml",
+      "type": "in_area"
+    },
+    {
+      "source": "clustering",
+      "target": "area:classical-ml",
+      "type": "in_area"
+    },
+    {
+      "source": "anomaly-detection",
+      "target": "area:classical-ml",
+      "type": "in_area"
+    },
+    {
+      "source": "recommendation-systems",
+      "target": "area:classical-ml",
+      "type": "in_area"
+    },
+    {
+      "source": "pytorch",
+      "target": "area:deep-learning",
+      "type": "in_area"
+    },
+    {
+      "source": "vision-language-models",
+      "target": "area:deep-learning",
+      "type": "in_area"
+    },
+    {
+      "source": "lora",
+      "target": "area:deep-learning",
+      "type": "in_area"
+    },
+    {
+      "source": "zero-few-shot-benchmarking",
+      "target": "area:deep-learning",
+      "type": "in_area"
+    },
+    {
+      "source": "structured-llm-outputs",
+      "target": "area:deep-learning",
+      "type": "in_area"
+    },
+    {
+      "source": "openai-api",
+      "target": "area:deep-learning",
+      "type": "in_area"
+    },
+    {
+      "source": "llm-agents",
+      "target": "area:deep-learning",
+      "type": "in_area"
+    },
+    {
+      "source": "llm-failure-analysis",
+      "target": "area:deep-learning",
+      "type": "in_area"
+    },
+    {
+      "source": "gpu-optimization",
+      "target": "area:deep-learning",
+      "type": "in_area"
+    },
+    {
+      "source": "domain-generalization",
+      "target": "area:deep-learning",
+      "type": "in_area"
+    },
+    {
+      "source": "privacy-preserving-ml",
+      "target": "area:deep-learning",
+      "type": "in_area"
+    },
+    {
+      "source": "rag",
+      "target": "area:deep-learning",
+      "type": "in_area"
+    },
+    {
+      "source": "rlhf",
+      "target": "area:deep-learning",
+      "type": "in_area"
+    },
+    {
+      "source": "dicom",
+      "target": "area:medical-data",
+      "type": "in_area"
+    },
+    {
+      "source": "multi-sequence-mri",
+      "target": "area:medical-data",
+      "type": "in_area"
+    },
+    {
+      "source": "ecg",
+      "target": "area:medical-data",
+      "type": "in_area"
+    },
+    {
+      "source": "hemodynamics",
+      "target": "area:medical-data",
+      "type": "in_area"
+    },
+    {
+      "source": "ehr",
+      "target": "area:medical-data",
+      "type": "in_area"
+    },
+    {
+      "source": "iso-evidence",
+      "target": "area:regulated",
+      "type": "in_area"
+    },
+    {
+      "source": "regulated-pharma",
+      "target": "area:regulated",
+      "type": "in_area"
+    },
+    {
+      "source": "clinician-collaboration",
+      "target": "area:regulated",
+      "type": "in_area"
+    },
+    {
+      "source": "unit-testing",
+      "target": "area:software",
+      "type": "in_area"
+    },
+    {
+      "source": "ci-azure-devops",
+      "target": "area:software",
+      "type": "in_area"
+    },
+    {
+      "source": "code-review",
+      "target": "area:software",
+      "type": "in_area"
+    },
+    {
+      "source": "docker",
+      "target": "area:software",
+      "type": "in_area"
+    },
+    {
+      "source": "rest-apis",
+      "target": "area:software",
+      "type": "in_area"
+    },
+    {
+      "source": "java",
+      "target": "area:software",
+      "type": "in_area"
+    },
+    {
+      "source": "graph-algorithms",
+      "target": "area:software",
+      "type": "in_area"
+    },
+    {
+      "source": "power-automate",
+      "target": "area:software",
+      "type": "in_area"
+    },
+    {
+      "source": "google-analytics",
+      "target": "area:software",
+      "type": "in_area"
+    },
+    {
+      "source": "stakeholder-reporting",
+      "target": "area:software",
+      "type": "in_area"
+    },
+    {
+      "source": "power-bi",
+      "target": "area:software",
+      "type": "in_area"
+    },
+    {
+      "source": "ph-pipeline",
+      "target": "philips-ws",
+      "type": "part_of"
+    },
+    {
+      "source": "ph-pipeline",
+      "target": "python",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-pipeline",
+      "target": "data-pipelines",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-pipeline",
+      "target": "data-validation",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-pipeline",
+      "target": "unit-testing",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-pipeline",
+      "target": "ci-azure-devops",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-pipeline",
+      "target": "docker",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-pipeline",
+      "target": "performance-optimization",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-pipeline",
+      "target": "ecg",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-lineage",
+      "target": "philips-ws",
+      "type": "part_of"
+    },
+    {
+      "source": "ph-lineage",
+      "target": "data-lineage",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-lineage",
+      "target": "reproducibility",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-lineage",
+      "target": "structured-logging",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-llm-agent",
+      "target": "philips-ws",
+      "type": "part_of"
+    },
+    {
+      "source": "ph-llm-agent",
+      "target": "llm-agents",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-llm-agent",
+      "target": "data-lineage",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-llm-agent",
+      "target": "power-automate",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-llm-agent",
+      "target": "code-review",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-iso-validation",
+      "target": "philips-ws",
+      "type": "part_of"
+    },
+    {
+      "source": "ph-iso-validation",
+      "target": "mixed-effects-models",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-iso-validation",
+      "target": "bootstrapping",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-iso-validation",
+      "target": "mathematical-optimization",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-iso-validation",
+      "target": "iso-evidence",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-iso-validation",
+      "target": "hemodynamics",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-iso-validation",
+      "target": "stakeholder-reporting",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-competitor-benchmarks",
+      "target": "philips-ws",
+      "type": "part_of"
+    },
+    {
+      "source": "ph-competitor-benchmarks",
+      "target": "benchmarking",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-competitor-benchmarks",
+      "target": "iso-evidence",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-competitor-benchmarks",
+      "target": "clinician-collaboration",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-batch-cli",
+      "target": "philips-ws",
+      "type": "part_of"
+    },
+    {
+      "source": "ph-batch-cli",
+      "target": "python",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-batch-cli",
+      "target": "workflow-automation",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ph-batch-cli",
+      "target": "performance-optimization",
+      "type": "demonstrates"
+    },
+    {
+      "source": "th-finetune",
+      "target": "philips-ws",
+      "type": "part_of"
+    },
+    {
+      "source": "th-finetune",
+      "target": "pytorch",
+      "type": "demonstrates"
+    },
+    {
+      "source": "th-finetune",
+      "target": "vision-language-models",
+      "type": "demonstrates"
+    },
+    {
+      "source": "th-finetune",
+      "target": "lora",
+      "type": "demonstrates"
+    },
+    {
+      "source": "th-finetune",
+      "target": "ecg",
+      "type": "demonstrates"
+    },
+    {
+      "source": "th-finetune",
+      "target": "diagnostic-metrics",
+      "type": "demonstrates"
+    },
+    {
+      "source": "th-benchmark",
+      "target": "philips-ws",
+      "type": "part_of"
+    },
+    {
+      "source": "th-benchmark",
+      "target": "zero-few-shot-benchmarking",
+      "type": "demonstrates"
+    },
+    {
+      "source": "th-benchmark",
+      "target": "structured-llm-outputs",
+      "type": "demonstrates"
+    },
+    {
+      "source": "th-benchmark",
+      "target": "openai-api",
+      "type": "demonstrates"
+    },
+    {
+      "source": "th-evaluation",
+      "target": "philips-ws",
+      "type": "part_of"
+    },
+    {
+      "source": "th-evaluation",
+      "target": "diagnostic-metrics",
+      "type": "demonstrates"
+    },
+    {
+      "source": "th-evaluation",
+      "target": "threshold-tuning",
+      "type": "demonstrates"
+    },
+    {
+      "source": "th-evaluation",
+      "target": "reproducibility",
+      "type": "demonstrates"
+    },
+    {
+      "source": "th-evaluation",
+      "target": "llm-failure-analysis",
+      "type": "demonstrates"
+    },
+    {
+      "source": "th-evaluation",
+      "target": "clinician-collaboration",
+      "type": "demonstrates"
+    },
+    {
+      "source": "th-gpu-efficiency",
+      "target": "philips-ws",
+      "type": "part_of"
+    },
+    {
+      "source": "th-gpu-efficiency",
+      "target": "pytorch",
+      "type": "demonstrates"
+    },
+    {
+      "source": "th-gpu-efficiency",
+      "target": "gpu-optimization",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ba-forecasting",
+      "target": "basf",
+      "type": "part_of"
+    },
+    {
+      "source": "ba-forecasting",
+      "target": "time-series-forecasting",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ba-forecasting",
+      "target": "hierarchical-forecasting",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ba-forecasting",
+      "target": "hyperparameter-tuning",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ba-forecasting",
+      "target": "python",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ba-reporting",
+      "target": "basf",
+      "type": "part_of"
+    },
+    {
+      "source": "ba-reporting",
+      "target": "stakeholder-reporting",
+      "type": "demonstrates"
+    },
+    {
+      "source": "kr-data",
+      "target": "klinikum",
+      "type": "part_of"
+    },
+    {
+      "source": "kr-data",
+      "target": "data-integration",
+      "type": "demonstrates"
+    },
+    {
+      "source": "kr-data",
+      "target": "ehr",
+      "type": "demonstrates"
+    },
+    {
+      "source": "kr-data",
+      "target": "sql-relational",
+      "type": "demonstrates"
+    },
+    {
+      "source": "kr-models",
+      "target": "klinikum",
+      "type": "part_of"
+    },
+    {
+      "source": "kr-models",
+      "target": "gradient-boosting",
+      "type": "demonstrates"
+    },
+    {
+      "source": "kr-models",
+      "target": "logistic-regression",
+      "type": "demonstrates"
+    },
+    {
+      "source": "kr-models",
+      "target": "class-imbalance",
+      "type": "demonstrates"
+    },
+    {
+      "source": "kr-models",
+      "target": "cross-validation",
+      "type": "demonstrates"
+    },
+    {
+      "source": "kr-models",
+      "target": "calibration",
+      "type": "demonstrates"
+    },
+    {
+      "source": "kr-models",
+      "target": "hyperparameter-tuning",
+      "type": "demonstrates"
+    },
+    {
+      "source": "kr-threshold",
+      "target": "klinikum",
+      "type": "part_of"
+    },
+    {
+      "source": "kr-threshold",
+      "target": "threshold-tuning",
+      "type": "demonstrates"
+    },
+    {
+      "source": "kr-threshold",
+      "target": "feature-importance",
+      "type": "demonstrates"
+    },
+    {
+      "source": "kr-threshold",
+      "target": "clinician-collaboration",
+      "type": "demonstrates"
+    },
+    {
+      "source": "sa-kpi",
+      "target": "sanofi",
+      "type": "part_of"
+    },
+    {
+      "source": "sa-kpi",
+      "target": "data-integration",
+      "type": "demonstrates"
+    },
+    {
+      "source": "sa-kpi",
+      "target": "regulated-pharma",
+      "type": "demonstrates"
+    },
+    {
+      "source": "sa-kpi",
+      "target": "google-analytics",
+      "type": "demonstrates"
+    },
+    {
+      "source": "sa-digital",
+      "target": "sanofi",
+      "type": "part_of"
+    },
+    {
+      "source": "sa-digital",
+      "target": "google-analytics",
+      "type": "demonstrates"
+    },
+    {
+      "source": "sa-digital",
+      "target": "stakeholder-reporting",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ew-mri-curation",
+      "target": "ewha-brain",
+      "type": "part_of"
+    },
+    {
+      "source": "ew-mri-curation",
+      "target": "dicom",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ew-mri-curation",
+      "target": "multi-sequence-mri",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ew-mri-curation",
+      "target": "data-validation",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ew-mri-curation",
+      "target": "data-lineage",
+      "type": "demonstrates"
+    },
+    {
+      "source": "ew-review",
+      "target": "ewha-brain",
+      "type": "part_of"
+    },
+    {
+      "source": "pr-tail-risk",
+      "target": "tail-risk",
+      "type": "part_of"
+    },
+    {
+      "source": "pr-tail-risk",
+      "target": "pytorch",
+      "type": "demonstrates"
+    },
+    {
+      "source": "pr-tail-risk",
+      "target": "domain-generalization",
+      "type": "demonstrates"
+    },
+    {
+      "source": "pr-tail-risk",
+      "target": "tail-risk",
+      "type": "demonstrates"
+    },
+    {
+      "source": "pr-homomorphic",
+      "target": "homomorphic-ml",
+      "type": "part_of"
+    },
+    {
+      "source": "pr-homomorphic",
+      "target": "privacy-preserving-ml",
+      "type": "demonstrates"
+    },
+    {
+      "source": "pr-homomorphic",
+      "target": "pytorch",
+      "type": "demonstrates"
+    },
+    {
+      "source": "pr-recsys",
+      "target": "recsys",
+      "type": "part_of"
+    },
+    {
+      "source": "pr-recsys",
+      "target": "recommendation-systems",
+      "type": "demonstrates"
+    },
+    {
+      "source": "pr-recsys",
+      "target": "rest-apis",
+      "type": "demonstrates"
+    },
+    {
+      "source": "pr-recsys",
+      "target": "sql-relational",
+      "type": "demonstrates"
+    },
+    {
+      "source": "pr-routing",
+      "target": "routing-server",
+      "type": "part_of"
+    },
+    {
+      "source": "pr-routing",
+      "target": "java",
+      "type": "demonstrates"
+    },
+    {
+      "source": "pr-routing",
+      "target": "rest-apis",
+      "type": "demonstrates"
+    },
+    {
+      "source": "pr-routing",
+      "target": "graph-algorithms",
+      "type": "demonstrates"
+    },
+    {
+      "source": "pr-loan",
+      "target": "loan-risk",
+      "type": "part_of"
+    },
+    {
+      "source": "pr-loan",
+      "target": "classical-ml",
+      "type": "demonstrates"
+    },
+    {
+      "source": "pr-loan",
+      "target": "clustering",
+      "type": "demonstrates"
+    },
+    {
+      "source": "pr-loan",
+      "target": "anomaly-detection",
+      "type": "demonstrates"
+    }
+  ]
+}

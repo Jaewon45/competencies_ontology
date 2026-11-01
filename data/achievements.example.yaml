@@ -1,0 +1,51 @@
+# Example input with made-up content. It shows the schema of the private data/achievements.yaml,
+# and lets anyone run the build without the real file:  python scripts/build_graph.py --example
+
+roles:
+  - id: example-hospital
+    org: Example University Hospital
+    title: Data Scientist
+    period: 2023-01/2024-06
+    location: Example City
+
+projects:
+  - id: example-project
+    title: Open Imaging Benchmark
+    kind: personal project
+    period: 2024-07/2024-09
+
+achievements:
+  - id: ex-pipeline
+    label: Imaging data pipeline
+    evidence: example-hospital
+    status: verified
+    facts:
+      what: pipeline that validates and converts imaging studies
+      quality: [schema checks, unit tests]
+    skills: [python, data-pipelines, data-validation, dicom, unit-testing]
+    phrasings:
+      default: >-
+        Built a tested Python pipeline that validates imaging studies before analysis.
+
+  - id: ex-model
+    label: Readmission risk model
+    evidence: example-hospital
+    status: verified
+    facts:
+      models: [gradient boosting, logistic regression]
+      evaluation: [cross-validation, calibration]
+    skills: [gradient-boosting, logistic-regression, cross-validation, calibration]
+    phrasings:
+      default: >-
+        Built and calibrated readmission risk models with cross-validated evaluation.
+
+  - id: ex-benchmark
+    label: Open model benchmark
+    evidence: example-project
+    status: verified
+    facts:
+      what: compared public vision models on an open imaging dataset
+    skills: [pytorch, benchmarking, reproducibility]
+    phrasings:
+      default: >-
+        Benchmarked public vision models on an open imaging dataset with reproducible splits.
