@@ -1,0 +1,148 @@
+{
+  "meta": {
+    "source": {
+      "run": "2026-11-02T00:48:59+00:00",
+      "eval_meta": {
+        "models": [
+          {
+            "name": "gemma3:4b",
+            "digest": "68ceab7e468a"
+          },
+          {
+            "name": "qwen2.5:3b",
+            "digest": "357c53fb659c"
+          },
+          {
+            "name": "llama3.2:3b",
+            "digest": "a80c4f17acd5"
+          }
+        ],
+        "git_commit": "b6bd560",
+        "scripts_modified_since_commit": true,
+        "input_hashes": {
+          "achievements": "df0d8b17f76c",
+          "skills": "ca39c60943dd"
+        },
+        "generated_at": "2026-11-02T00:48:59+00:00",
+        "n_achievements": 21,
+        "temperature": 0,
+        "seed": 42,
+        "few_shot_excluded": [
+          "ba-forecasting",
+          "sa-kpi"
+        ]
+      }
+    },
+    "n_achievements": 21,
+    "near_miss_rules": {
+      "grounding_rejected": "model chose a hand-labelled skill, but its quote was not found verbatim in the input",
+      "listed_as_new": "model put a hand-labelled catalogue skill under new_skills (normalized id or label match)",
+      "same_area_substitution": "model chose a wrong skill from the same area as a missed hand-labelled skill; counted once per wrong proposal, while near_misses.csv has one row per (wrong, missed) pair",
+      "lenient_scoring": "grounding_rejected and listed_as_new count as hits; same_area_substitution does not"
+    }
+  },
+  "near_miss_counts": [
+    {
+      "model": "gemma3:4b",
+      "grounding_rejected": 1,
+      "listed_as_new": 1,
+      "same_area_substitution": 11
+    },
+    {
+      "model": "qwen2.5:3b",
+      "grounding_rejected": 1,
+      "listed_as_new": 0,
+      "same_area_substitution": 5
+    },
+    {
+      "model": "llama3.2:3b",
+      "grounding_rejected": 1,
+      "listed_as_new": 2,
+      "same_area_substitution": 7
+    }
+  ],
+  "missed_most_often": [
+    {
+      "skill": "pytorch",
+      "count": 10
+    },
+    {
+      "skill": "clinician-collaboration",
+      "count": 7
+    },
+    {
+      "skill": "data-validation",
+      "count": 6
+    },
+    {
+      "skill": "data-lineage",
+      "count": 6
+    },
+    {
+      "skill": "sql-relational",
+      "count": 6
+    },
+    {
+      "skill": "stakeholder-reporting",
+      "count": 6
+    },
+    {
+      "skill": "reproducibility",
+      "count": 6
+    },
+    {
+      "skill": "diagnostic-metrics",
+      "count": 6
+    },
+    {
+      "skill": "ecg",
+      "count": 5
+    },
+    {
+      "skill": "iso-evidence",
+      "count": 4
+    }
+  ],
+  "wrongly_proposed_most_often": [
+    {
+      "skill": "code-review",
+      "count": 4
+    },
+    {
+      "skill": "data-pipelines",
+      "count": 4
+    },
+    {
+      "skill": "python",
+      "count": 4
+    },
+    {
+      "skill": "performance-optimization",
+      "count": 4
+    },
+    {
+      "skill": "diagnostic-metrics",
+      "count": 3
+    },
+    {
+      "skill": "feature-importance",
+      "count": 3
+    },
+    {
+      "skill": "ci-azure-devops",
+      "count": 3
+    },
+    {
+      "skill": "logistic-regression",
+      "count": 2
+    },
+    {
+      "skill": "regulated-pharma",
+      "count": 2
+    },
+    {
+      "skill": "zero-few-shot-benchmarking",
+      "count": 2
+    }
+  ]
+}

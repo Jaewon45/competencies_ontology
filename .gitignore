@@ -3,3 +3,4 @@ data/corrections.private.yaml
 .env
 .DS_Store
 data/achievements.yaml
+.Rhistory

@@ -3,7 +3,7 @@
     python scripts/build_graph.py              # real data: data/achievements.yaml (git-ignored)
     python scripts/build_graph.py --example    # example data: data/achievements.example.yaml
 
-Writes site/graph.json. Only the fields listed in PUBLIC_FIELDS reach that file;
+Writes docs/graph.json. Only the fields listed in PUBLIC_FIELDS reach that file;
 facts and phrasings never leave the private input.
 """
 
@@ -21,10 +21,10 @@ import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
-SITE = ROOT / "site"
+SITE = ROOT / "docs"
 
 # ---------------------------------------------------------------------------
-# Publication policy: the only fields that can appear in site/graph.json.
+# Publication policy: the only fields that can appear in docs/graph.json.
 # ---------------------------------------------------------------------------
 PUBLIC_FIELDS = {
     "area": ["id", "type", "label"],
